@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://hello123.pythonanywhere.com/ -->
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="/static/style.css">
+        {% block headerjs %}
+        
+        {% endblock %}
+    </head>
+    <body>
+        <div id="container">
+                <div id="wrap">
+                    {% include 'header.html' %}
+
+                    <div class="outer">
+                        {% block left %}
+
+                        {% endblock %}
+
+                        {% include 'right.html' %}
+
+                    </div>
+
+                    {% include 'footer.html' %}
+
+                </div>
+            </div>
+
+    </body>
+
+</html>
