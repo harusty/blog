@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    帖子列表
+{% endblock %}
+{% block left %}
+    <div id="main">
+        <div class="archives">
+            {% for post in postList %}
+                <article class="archive-article archive-type-post">
+                    <div class="archive-article-inner">
+                        <header class="archive-article-header">
+                            <a href="#" class="archive-article-date">
+                                <time>{{ post.created|date:'Y-m' }}</time>
+                            </a>
+                            <h1 itemprop="name">
+                                <a class="archive-article-title" target="_blank"
+                                   href="/post/{{ post.id }}">{{ post.title }}</a>
+                            </h1>
+                        </header>
+                    </div>
+                </article>
+
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

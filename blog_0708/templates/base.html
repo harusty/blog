@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- saved from url=(0035)http://hello123.pythonanywhere.com/ -->
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="/static/style.css">
+    <style>
+        form {
+            position: relative;
+            width: 150px;
+            margin: 0 auto;
+        }
+
+        .d1 {
+            float: right;
+            line-height: 67px;
+        }
+
+        .d1 input {
+            width: 100px;
+            height: 30px;
+            border: 2px solid darkred;
+            border-radius: 5px;
+            outline: none;
+            background: white;
+            color: #1e242a;
+        }
+    </style>
+    {% block headerjs %}
+    {% endblock %}
+</head>
+<body>
+<div id="container">
+    <div id="wrap">
+        {% include 'header.html' %}
+        <div class="outer">
+            {% block left %}
+            {% endblock %}
+            {% include 'right.html' %}
+        </div>
+        {% include 'footer.html' %}
+
+    </div>
+</div>
+</body>
+
+</html>
