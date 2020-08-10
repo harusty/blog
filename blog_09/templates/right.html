@@ -1,0 +1,62 @@
+<aside id="sidebar">
+    <!--分类-->
+    <div class="widget-wrap">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list">
+                {% for categoryItem in category_list %}
+                    <li class="category-list-item">
+                        <a class="category-list-link"
+                           href="/category/{{ categoryItem.category }}">{{ categoryItem.category__cname }}</a>
+                        <span class="category-list-count">{{ categoryItem.c }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <!--归档-->
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list">
+                {% for guidangItem in guidang_blog %}
+                    <li class="archive-list-item">
+                        <a class="archive-list-link"
+                           href="/archive/{{ guidangItem.0 | date:'Y' }}/{{ guidangItem.0 | date:'m' }}">{{ guidangItem.0 | date:'Y年m月' }}</a>
+                        <span class="archive-list-count">{{ guidangItem.1 }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <!--近期文章-->
+    <div class="widget-wrap">
+        <h3 class="widget-title">近期文章</h3>
+        <div class="widget">
+            <ul>
+                {% for recentBlogItem in recent_blog %}
+                    <li>
+                        <a href="/post/{{ recentBlogItem.id }}"
+                           target="_blank">{{ recentBlogItem.title | truncatechars:12 }}</a>
+                    </li>
+                {% endfor %}
+
+            </ul>
+        </div>
+    </div>
+    <div class="widget-wrap">
+        <h3 class="widget-title">友情链接</h3>
+        <div class="widget">
+            <ul>
+                <li>
+                    <a href="http://www.bjsxt.com/" target="_blank">csdn</a>
+                </li>
+                <li>
+                    <a href="http://www.sxt.cn/" target="_blank">简书</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</aside>
